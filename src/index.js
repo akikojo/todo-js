@@ -6,9 +6,19 @@ const onClickAdd = () => {
 
   //liを生成
   const li = document.createElement("li");
-  console.log(li);
-  alert(inputText);
+  li.className = "list-row";
+
+  //pを作成
+  const p = document.createElement("p");
+  p.innerText = inputText;
+
+  //liの子要素に各要素を設定
+  li.appendChild(p);
+
+  //未完了のリストに追加
+  document.getElementById("incomplete-list").appendChild(li);
 };
+
 document
   .getElementById("add-button")
   .addEventListener("click", () => onClickAdd());
